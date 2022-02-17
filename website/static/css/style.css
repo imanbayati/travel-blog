@@ -1,0 +1,428 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(fontiran.css);
+@media all and (max-width:768px){
+	.btn-about{
+    justify-content: center;
+    display: flex;
+}
+.card-text-down-about p{
+	text-align: center !important;
+}
+
+}
+@media (min-width:768px) and (max-width:992px){
+	.menu ul li {
+ 	margin-left: 2px !important;
+		font-size: 12px;
+}
+	.content-top{
+	margin-top: 12rem !important;
+}
+}
+@media all and (min-width:1100px){
+	.content-top{
+	margin-top: 19rem !important;
+}
+}
+@media (min-width:1024px) and (max-width:1100px){
+	.content-top{
+	margin-top: 12rem !important;
+}
+}
+
+@media (min-width:500px) and (max-width:768px){
+	.content-top{
+	margin-top: 3rem !important;
+}
+	.content-top h3{
+	font-size: 30px !important;
+}
+}
+@media all and (max-width:500px){
+	.content-top{
+	margin-top: 1rem !important;
+}
+	.content-top h3{
+	font-size: 12px !important;
+}
+	.content-top p{
+	font-size: 8px !important;
+		margin-bottom: 5px !important;
+}
+	.content-top button{
+	font-size: 9px !important;
+	padding:5px !important;
+}
+}
+
+*{
+	font-family: iranyekanfn;
+}
+.bg-nav{
+	background: #81b214;
+}
+.menu ul li {
+ 	margin-left: 15px;
+	font-weight: 500;
+}
+.top-search input{
+	box-shadow: none !important;
+	border: none !important;
+	border-radius: 10px;
+}
+.top-search svg{
+    top: 28%;
+    left: 7%;
+	color: #206a5d; 
+}
+.img-top{
+	position: relative;
+}
+.img-top img.responsive{
+  width: 100%;
+  height: auto;
+}
+.overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(32, 106, 93, 0.8);
+}
+.content-top{
+	margin-top: 27rem;
+	top: 0;
+	left: 0;
+}
+.content-top h3{
+	font-size: 33px;
+	font-weight: 800;
+}
+.content-top p{
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 2;
+}
+.content-top button{
+	background: #81b214;
+	border: 2px solid #81b214;
+	font-weight: 600;
+	border-radius: 5px;
+	transition: .3s;
+}
+.content-top button:hover{
+	transform: scale(0.9);
+	transition: .3s;
+}
+.card-product{
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 0 0 1rem rgba(46, 125, 50, 0.3);
+	transition: .3s;
+}
+.card-product .card-img-top img{
+	height: 200px;
+	transition: .3s;
+}
+.overlay-2{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-radius: 10px 10px;
+	background: rgba(250, 250, 250, 0.6);
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;
+	z-index: 999999;
+}
+.card-product:hover{
+	cursor: pointer;
+	transition: .3s;
+}
+.card-product:hover .overlay-2{
+	opacity: 1;
+	visibility: visible;
+	transition: .3s;
+}
+.card-product:hover .card-img-top img{
+	transform: scale(1.1) !important;
+	transition: .3s;
+}
+.icon-product{
+	margin-top: 7rem;
+	align-items: center;
+}
+
+.icon-product a{
+	color: #2E7D32;
+	font-size: 2rem;
+}
+.titr-product{
+	font-size: 20px;
+}
+.btn-more button{
+	background: #81b214;
+	border: 2px solid #81b214;
+	font-weight: 600;
+	border-radius: 5px;
+	transition: .3s;
+}
+.btn-more button:hover{
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+	transform: translateY(-5px) ;
+	transition: all ease .3s;
+}
+.card-about .card-img-top img{
+	width: 100%;
+	height: 450px;
+}
+.text-about p{
+	line-height: 3;
+	font-size: 13px;
+}
+
+.btn-about button{
+	background: #81b214;
+	border: 2px solid #81b214;
+	font-weight: 600;
+	border-radius: 5px;
+	transition: .3s;
+}
+.btn-about button:hover{
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+	transform: translateY(-5px) ;
+	transition: all ease .3s;
+}
+.card-why .card-img-top img{
+	width: 100px;
+	height: auto;
+}
+.card-why .card-body p{
+	font-size: 19px;
+	color: #81b214;
+}
+.card-why .card-body small{
+	line-height: 36px;
+    font-weight: 400;
+    font-size: 13px;
+}
+.form-contact input, .form-contact textarea{
+	box-shadow: none !important;
+	border: 1px solid #E0E0E0 !important;
+	border-radius: 20px;
+}
+.form-contact input::placeholder, .form-contact textarea::placeholder{
+	font-size: 13px;
+	font-weight: 300;
+}
+.form-contact textarea{
+	resize: none;
+}
+.form-contact .btn-contact{
+	display: flex;
+    justify-content: flex-end;
+}
+.form-contact .btn-contact button{
+	background: #81b214;
+	border: none;
+	font-weight: 600;
+	border-radius: 20px;
+	transition: .3s;
+	overflow: hidden;
+}
+.hvr-shutter-out-horizontal{display:inline-block;vertical-align:middle;-webkit-transform:perspective(1px) translateZ(0);transform:perspective(1px) translateZ(0);box-shadow:0 0 1px rgba(0,0,0,0);position:relative;background:#e1e1e1;-webkit-transition-property:color;transition-property:color;-webkit-transition-duration:.3s;transition-duration:.3s}.hvr-shutter-out-horizontal:before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:0;right:0;background:#2E7D32;-webkit-transform:scaleX(0);transform:scaleX(0);-webkit-transform-origin:50%;transform-origin:50%;-webkit-transition-property:transform;transition-property:transform;-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transition-timing-function:ease-out;transition-timing-function:ease-out}.hvr-shutter-out-horizontal:active,.hvr-shutter-out-horizontal:focus,.hvr-shutter-out-horizontal:hover{color:#fff}.hvr-shutter-out-horizontal:active:before,.hvr-shutter-out-horizontal:focus:before,.hvr-shutter-out-horizontal:hover:before{-webkit-transform:scaleX(1);transform:scaleX(1)}
+
+.card-comment, .card-team{
+	box-shadow: 0 0 0.6rem rgba(0,0,0,0.2);
+	border-radius: 10px;
+	margin: 16px;
+}
+.card-comment img{
+	border-radius: 100%;
+	border: 4px solid #E0E0E0;
+}
+.card-comment small{
+	line-height: 33px;
+    font-size: 13px;
+    font-weight: 380;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 30px;
+    line-height: 20px;
+    color: green;
+	transition: .2s;
+	margin-top: 15px;
+}
+.slick-dots li.slick-active button:before
+{
+	 font-size: 37px;
+    color: green;
+}
+.bg-footer{
+	background-color: #206a5d;
+}
+.contact-footer a svg{
+	font-size: 4.5rem;
+    transition: .3s;
+    color: white;
+    background-color: #81b214;
+    padding: 14px;
+    border-radius: 100%;
+    border: 2px solid #81b214;
+}
+.contact-footer a svg:hover{
+    transition: .3s;
+    background-color: transparent;
+}
+.icons-social{
+	border-radius: 12px;
+}
+.social .icons-social a{
+	 color: #206a5d;
+    font-size: 2rem;
+    transition: .2s;
+}
+.social .icons-social a:hover{
+	 color: #81b214;
+    transition: .2s;
+}
+.copyright{
+	margin:0 5px 10px 5px;
+	font-weight: 300;
+	font-size: 15px;
+}
+.card-breadcrumb{
+	box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+	border-radius: 10px;
+}
+.card-breadcrumb a{
+	font-size: 12px;
+	font-weight: 400;
+	text-decoration: none;
+}
+.card-breadcrumb a.breadcrumb2{
+	color: #206a5d;
+}
+.img-top-about img{
+	height: 550px;
+}
+.card-text-down-about img{
+	height:500px;
+}
+.card-text-down-about{
+	box-shadow: 0 0 1rem rgba(46, 125, 50, 0.3);
+	border-radius: 15px;
+}
+.card-text-down-about p{
+	line-height: 3;
+	font-size: 14px;
+}
+.card-team .card-img-top img{
+	border-radius: 10px 10px 0 0 !important;
+	height: 430px;
+    width: 100%;
+}
+.pages ul{
+	flex-direction: row;
+	justify-content: center;
+}
+.pages ul li{
+    margin: 5px;
+	padding: 5px;
+    background: #206a5d;
+    border-radius: 10px;
+    transition: .2s
+}
+.pages ul li:hover{
+    background: #81b214;
+    transition: .2s
+}
+.pages ul li a{
+	font-size: 17px;
+}
+.card-side{
+	box-shadow: 0 0 1rem rgb(0 0 0 / 20%);
+    border-radius: 10px;
+	margin-bottom: 40px;
+}
+.card-side .card-header p{
+	background-color: #206a5d;
+	margin-right: 8px;
+    border-radius: 0 0 20px 20px;
+}
+.card-side .card-body input{
+	margin: 6px;
+}
+.which small{
+	font-size: 13px;
+}
+.filter a{
+	color: black;
+    font-size: 15px;
+}
+.icon-filter {
+	margin-left:5px;
+}
+.icon-filter svg{
+	margin: 4px 0 0 8px;
+}
+.filter-2 a small{
+	background: #EFF3F8;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: .2s;
+    color: black;
+    font-size: 12px;
+}
+.filter-2 a small:hover{
+	background: #81b214;
+	color: white;
+    transition: all ease .2s;
+}
+.filter-2 a{
+	margin-bottom: 13px;
+}
+.panel-menu ul{
+	list-style: none;
+}
+.panel-menu ul li a svg{
+    margin: 2px 0 0 6px;
+}
+.panel-menu ul li a{
+    font-size: 14px;
+    font-weight: 600;
+    color: #666666 !important;
+    transition: .3s;
+	border-radius: 10px;
+}
+.panel-menu ul li a:hover:not(.active){
+    color: white !important;
+	background-color: #81b214;
+    transition:all ease .3s
+}
+.panel-menu ul li a.active{
+    color: white !important;
+	background-color: #33a08c;
+    transition:all ease .3s
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
