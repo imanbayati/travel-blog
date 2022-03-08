@@ -1,9 +1,9 @@
 from django.db import models
-
-# Create your models here.
+from django.contrib.auth.models import User
 
 class Post(models.Model):
-    
+    image = models.ImageField(upload_to='blog/',default='blog/default.jpg')
+    author = models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
     title = models.CharField(max_length = 220) 
     content = models.TextField()
     status = models.BooleanField(default=False)
