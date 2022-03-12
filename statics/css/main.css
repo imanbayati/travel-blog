@@ -48,6 +48,19 @@ $black			: #222;
 /* =================================== */
 /*  Basic Style 
 /* =================================== */
+@media screen and  (max-width:726px){
+  .user-details .comments{
+    margin: auto !important;
+    display: block;
+  }
+}
+@media (min-width:280px) and (max-width:540px){
+  .user-details .view, .user-details .date, .user-details .user-name{
+    margin: auto !important;
+    display: block;
+  }
+}
+
 ::-moz-selection {
   /* Code for Firefox */
   background-color: #f8b600;
@@ -3390,7 +3403,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     text-align: left;
   }
 }
-
 .post-content-area .single-post .meta-details .tags {
   margin-bottom: 30px;
 }
@@ -3400,18 +3412,25 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 14px;
 }
 
-.post-content-area .single-post .meta-details .tags li a {
-  color: #222;
+ul.tags--2 li a{
+  color: #777777;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  margin: 0 5px;
+}
+
+ul.tags--2 li a:hover, .single-post .meta-details .tags li a:hover {
+  color: #f8b600;
+}
+.single-post .meta-details .tags li a{
+  color: #777777;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-
-.post-content-area .single-post .meta-details .tags li a:hover {
-  color: #f8b600;
-}
-
 @media (max-width: 1024px) {
   .post-content-area .single-post .meta-details {
     margin-top: 0px;
@@ -3447,7 +3466,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .post-content-area .single-post .feature-img img {
   width: 100%;
-  height: 252px !important;
+  height: 340px !important;
 }
 
 .post-content-area .single-post .posts-title h3 {
