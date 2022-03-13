@@ -3421,15 +3421,19 @@ ul.tags--2 li a{
   margin: 0 5px;
 }
 
-ul.tags--2 li a:hover, .single-post .meta-details .tags li a:hover {
-  color: #f8b600;
-}
 .single-post .meta-details .tags li a{
   color: #777777;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+.single-post .user-details p a{
+  margin-right: 2px;
+  margin-left: 21px;
+}
+ul.tags--2 li a:hover, .single-post .meta-details .tags li a:hover {
+  color: #f8b600;
 }
 @media (max-width: 1024px) {
   .post-content-area .single-post .meta-details {
