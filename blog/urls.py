@@ -5,5 +5,5 @@ urlpatterns = [
 
     path('',Blog_index,name='index'),
     path('<int:pid>',Blog_single,name='single'),
-
+    
 ]
