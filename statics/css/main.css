@@ -3681,7 +3681,10 @@ ul.tags--2 li a:hover, .single-post .meta-details .tags li a:hover {
 .widget-wrap .popular-post-widget .popular-post-list .thumb img {
   width: 100%;
 }
-
+.widget-wrap .popular-post-widget .single-post-list img{
+  width: 115px !important;
+  height: auto !important;
+}
 .widget-wrap .popular-post-widget .single-post-list {
   margin-bottom: 20px;
 }
