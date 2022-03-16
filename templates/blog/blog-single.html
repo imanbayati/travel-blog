@@ -26,7 +26,7 @@
 							<div class="single-post row">
 								<div class="col-lg-12">
 									<div class="feature-img">
-										<img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg' %}" alt="">
+										<img class="img-fluid" src="{{post.image.url}}" alt="">
 									</div>									
 								</div>
 								<div class="row user-details d-flex justify-content-between col-12 d-flex meta-details">
@@ -211,9 +211,9 @@
 							<div class="widget-wrap">
 								{% include 'blog/blog-search.html' %}
 								{% include 'blog/blog-author.html' %}
-								{% include 'blog/blog-populer-post.html' %}
+								{% popular %}
 								{% include 'blog/blog-ads.html' %}
-								{% include 'blog/blog-posts-category.html' %}
+								{% postcategories %}
 								{% include 'blog/blog-newsletter.html' %}
 								{% include 'blog/blog-posts-tags.html' %}
 							</div>
