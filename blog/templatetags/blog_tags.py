@@ -2,6 +2,8 @@ from django import template
 
 from blog.models import Post,Category
 
+from django.contrib.auth.models import User
+
 register = template.Library()
 
 @register.simple_tag
@@ -31,3 +33,7 @@ def postcategories():
     for name in categories:
         cat_dict[name]=posts.filter(category=name).count()
     return{'categories':cat_dict}
+
+
+    
+
