@@ -23,3 +23,11 @@ def Blog_single(request,pid):
     #posts = posts.filter(category__name=cat_name)
     #context = {'posts': posts}
     #return render(request,'blog/blog-home.html',context)
+    
+def Blog_search(request):
+    posts = Post.objects.filter(status=1)
+    if request.method == 'GET':
+        if search := request.GET.get('s'):
+            posts = posts.filter(content__contains=search)
+    context = {'posts': posts}
+    return render(request,'blog/blog-home.html',context)
