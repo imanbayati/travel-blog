@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from website.forms import NameForm , Contactform
-from django.http import HttpResponse
+from website.forms import NameForm , Contactform , Newsletterform
+from django.http import HttpResponse , HttpResponseRedirect
 
 
 def Home(request):
@@ -10,7 +10,25 @@ def About(request):
     return render(request , 'website/about.html')
 
 def Contact(request):
-    return render(request , 'website/contact.html')
+    if request.method == 'POST':
+        form = Contactform(request.POST)
+        if form.is_valid():
+            form.save()
+    form = Contactform()
+    context = {'form': form} 
+    return render(request , 'website/contact.html',context)
+
+
+
+def Newsletter(request):
+    if request.method=='POST':
+        form = Newsletterform(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+    else:
+        return HttpResponseRedirect('/')
+    
 
 def Test(request):
     if request.method == 'POST':

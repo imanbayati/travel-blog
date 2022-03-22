@@ -1,5 +1,5 @@
 from django.contrib import admin
-from website.models import Contact
+from website.models import Contact,Newsletter
 # Register your models here.
 
 class ContantAdmin(admin.ModelAdmin):
@@ -9,3 +9,5 @@ class ContantAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_date'
 
 admin.site.register(Contact,ContantAdmin)
+
+admin.site.register(Newsletter)
