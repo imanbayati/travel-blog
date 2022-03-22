@@ -1,5 +1,4 @@
 {% load static %}
-{% load blog_tags %}
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
     <head>
@@ -25,6 +24,11 @@
 ============================================= -->
     </head>
     <body>
-    <p> test:{% popular %} </p>
+        <form method="post" action="{% url 'website:test' %}">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">submit</button>
+        </form>
         
-</body>
+    </body>
+</html>
