@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from website.forms import NameForm
+from website.forms import NameForm , Contactform
 from django.http import HttpResponse
 
 
@@ -14,16 +14,13 @@ def Contact(request):
 
 def Test(request):
     if request.method == 'POST':
-        form = NameForm(request.POST)
+        form = Contactform(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name'] 
-            email = form.cleaned_data['email'] 
-            subject = form.cleaned_data['subject'] 
-            message = form.cleaned_data['message'] 
+            form.save()
             return HttpResponse('done')
         else:
             return HttpResponse('not valid')
     
-    form = NameForm()
+    form = Contactform()
     context = {'form':form}
     return render(request,'test.html',context)
