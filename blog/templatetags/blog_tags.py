@@ -21,7 +21,7 @@ def snippets(value):
 @register.inclusion_tag('blog/blog-populer-post.html')
 
 def popular():
-    posts = Post.objects.filter(status=1).order_by('published_date')[:4]
+    posts = Post.objects.filter(status=1).order_by('-published_date')[:4]
     return {'posts':posts}
 
 @register.inclusion_tag('blog/blog-posts-category.html')
