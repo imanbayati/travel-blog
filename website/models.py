@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.sites.models import Site 
 
 # Create your models here.
 
@@ -19,3 +20,6 @@ class Newsletter(models.Model):
     
     def __str__(self):
         return self.email
+    
+#class site(models.Model):
+    #sites = models.ManyToManyField(Site)
