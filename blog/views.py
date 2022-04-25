@@ -4,12 +4,14 @@ from blog.models import Post
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 
 # Create your views here.
-def Blog_index(request,cat_name=None,author_username=None):
+def Blog_index(request,**kwargs):
     posts = Post.objects.filter(status=1)
-    if cat_name:
-        posts = posts.filter(category__name=cat_name)
-    if author_username:
-        posts = posts.filter(author__username=author_username)
+    if kwargs.get('cat_name') != None:
+        posts = posts.filter(category__name=kwargs.get('cat_name'))
+    if kwargs.get('author_username') !=None :
+        posts = posts.filter(author__username=kwargs.get('author_username'))
+    if kwargs.get('tag_name') != None:
+        posts = Post.objects.filter(tags__name__in=[kwargs.get('tag_name')])
     posts = Paginator(posts,4)
     try:
         page_number = request.GET.get('page')
