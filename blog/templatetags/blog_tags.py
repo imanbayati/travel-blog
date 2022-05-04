@@ -1,6 +1,6 @@
 from django import template
 
-from blog.models import Post,Category
+from blog.models import Post,Category,Comment
 
 from django.contrib.auth.models import User
 
@@ -35,6 +35,11 @@ def postcategories():
     return{'categories':cat_dict}
 
 
+
+@register.simple_tag(name='comment_count')
+
+def function(pid):
+    return Comment.objects.filter(post=pid,approved=True).count()
 
 
     
