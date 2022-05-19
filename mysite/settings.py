@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'robots',
     'debug_toolbar',
     'blog',
-    'taggit'
+    'taggit',
+    'accounts'
 ]
 
 SITE_ID = 2
