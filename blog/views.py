@@ -2,6 +2,8 @@ from multiprocessing import context
 from django.shortcuts import render,get_object_or_404
 from blog.models import Post,Comment
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
+from blog.forms import CommentForm
+from django.contrib import messages
 
 # Create your views here.
 def Blog_index(request,**kwargs):
@@ -24,10 +26,18 @@ def Blog_index(request,**kwargs):
     return render(request,'blog/blog-home.html',context)
 
 def Blog_single(request,pid):
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'your message submited')
+        else:
+             messages.add_message(request, messages.ERROR, 'your message not submited')
+    form = CommentForm()
     posts = Post.objects.filter(status=1)
     post = get_object_or_404(posts,id=pid)
     comments = Comment.objects.filter(post=post.id,approved=True)
-    context = {'post':post,'comments':comments}
+    context = {'post':post,'comments':comments,'form':form}
     return render(request,'blog/blog-single.html',context)
 
 def Blog_search(request):
