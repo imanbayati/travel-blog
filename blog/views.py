@@ -4,6 +4,8 @@ from blog.models import Post,Comment
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from blog.forms import CommentForm
 from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 def Blog_index(request,**kwargs):
@@ -25,6 +27,7 @@ def Blog_index(request,**kwargs):
     context = {'posts': posts}
     return render(request,'blog/blog-home.html',context)
 
+
 def Blog_single(request,pid):
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -33,12 +36,18 @@ def Blog_single(request,pid):
             messages.add_message(request, messages.SUCCESS, 'your message submited')
         else:
              messages.add_message(request, messages.ERROR, 'your message not submited')
-    form = CommentForm()
     posts = Post.objects.filter(status=1)
     post = get_object_or_404(posts,id=pid)
     comments = Comment.objects.filter(post=post.id,approved=True)
+    form = CommentForm()
     context = {'post':post,'comments':comments,'form':form}
-    return render(request,'blog/blog-single.html',context)
+    if post.login_require == False:
+        return render(request,'blog/blog-single.html',context)
+    else:
+        if request.user.is_authenticated:
+            return render(request,'blog/blog-single.html',context)
+        else:
+            return HttpResponseRedirect(reverse('accounts:login'))
 
 def Blog_search(request):
     posts = Post.objects.filter(status=1)
