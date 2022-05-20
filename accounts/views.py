@@ -1,7 +1,8 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect 
 from django.contrib.auth import authenticate, login ,logout
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm ,UserCreationForm  
+from django.contrib import messages
 
 def login_viwe(request):
     if not request.user.is_authenticated:
@@ -26,6 +27,17 @@ def logout_viwe(request):
         logout(request)
         return redirect('/')
     else:
-        return redirect('/')
+        return redirect('/') 
+    
 def signup_viwe(request):
-    return render(request,'accounts/signup.html')
+    if not request.user.is_authenticated:
+        if request.method == 'POST':  
+            form = UserCreationForm(request.POST)  
+            if form.is_valid():  
+                form.save()
+                return redirect('/')  
+        form = UserCreationForm()  
+        context = {'form':form}  
+        return render(request, 'accounts/signup.html', context)
+    else:
+        return redirect('/')

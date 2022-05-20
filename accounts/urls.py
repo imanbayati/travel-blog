@@ -4,5 +4,5 @@ app_name = 'accounts'
 urlpatterns = [
     path('login',login_viwe,name='login'),
     path('logout',logout_viwe,name='logout'),
-    path('signup',signup_viwe,name='signup')
+    path('signup',signup_viwe,name='signup'),
 ]
